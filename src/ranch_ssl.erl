@@ -100,6 +100,7 @@ messages() -> {ssl, ssl_closed, ssl_error}.
 listen(Opts) ->
 	case lists:keymember(cert, 1, Opts)
 			orelse lists:keymember(certfile, 1, Opts)
+			orelse lists:keymember(user_lookup_fun, 1, Opts)
 			orelse lists:keymember(sni_fun, 1, Opts)
 			orelse lists:keymember(sni_hosts, 1, Opts) of
 		true ->
